@@ -1,2 +1,2 @@
-# Sprint1
-This is my first version to minesweeper game,
+# Sprint1-minesweeper
+This is my first version to minesweeper game.
