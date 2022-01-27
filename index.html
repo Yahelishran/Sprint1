@@ -5,30 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mine Sweeper</title>
-    <link rel="stylesheet" href="css/app.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sprint 1 Challenge - Mine Sweeper</title>
 </head>
 
-
 <body onload="initGame()">
-    <h1> Mine Sweeper</h1>
-    <div class="level">
-        <h2>choose level:</h2>
-        <button onclick="userChoseLevel('Hard')">Hard</button>
-        <button onclick="userChoseLevel('Medium')">Medium</button>
-        <button onclick="userChoseLevel('Easy')">Easy</button>
-    </div>
+    <h1>Mine Sweeper</h1>
+    <div class="container">
+        <div class="stopwatch">
+            <div id="display">
+                <span id="seconds">00</span>
+            </div>
+        </div>
+        <h2>choose your level:</h2>
+        <div class="buttons">
+            <button class="btn1" onclick="boardSize(4,2)">Beginner</button>
+            <button class="btn2" onclick="boardSize(8,12)">Medium</button>
+            <button class="btn3" onclick="boardSize(12,30)">Expert</button>
+        </div>
+
+        <table cellpadding="10" class="board">
+            <tbody class="cells"></tbody>
+        </table>
 
 
-    <div class="board-container"></div>
-    <script src="js/mines.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/cell.js"></script>
-    <script src="js/features.js"></script>
-    <script src="js/game.js"></script>
-    <br /> <br /> <br />
-    <div class="footer">Yaheli Ishran &copy;</div>
+        <script src="js/util.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/mines.js"></script>
+        <script src="js/celles.js"></script>
+
+        <br /> <br /> <br />
+        <div class="footer">Yaheli Ishran &copy;</div>
+
 </body>
 
 </html>

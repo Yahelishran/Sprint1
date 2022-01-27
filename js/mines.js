@@ -1,47 +1,26 @@
 'use strict'
 
-
-function setMinesNegsCount(board) {
-    var SIZE = gLevel.SIZE
-    for (var i = 0; i < SIZE; i++) {
-        for (var j = 0; j < SIZE; j++) {
-            if (!board[i][j].isMine) {
-                board[i][j].setMinesNegsCount = getMinesNeighbor(i, j);
-            }
+function setMinesNegsCount() {
+    for (var i = 0; i < gBoard.length; i++) {
+        for (var j = 0; j < gBoard[i].length; j++) {
+            gBoard[i][j].minesAroundCount = countNeighbors(i, j);
         }
     }
-}
-function getMinesNeighbor(i, j) {
-    var mines = 0;
-    for (var n = i - 1; n <= i + 1; n++) {
-        if (n < 0 || n > gBoard.length - 1) continue
-        for (var d = j - 1; d <= j + 1; d++) {
-            if (d < 0 || d > gBoard[0].length - 1) continue
-            if (i === n && j === d) continue
-            if (gBoard[n][d].isMine) mines++;
-        }
-    }
-    return mines;
+    console.log(gBoard);
 }
 
-
-
-
-function setMinesOnBoard(elCell, row, col) {
-    var size = gLevel.SIZE
-    var countMine = gLevel.SIZE
-    for (var i = 0; i < size; i++) {
-        for (var j = 0; j < size; j++) {
-            if (row == i && col == j) continue
-            var x = getRandomInt(10)
-            if (x < 3 && countMine > 0) {
-                gBoard[i][j].isMine = true
-                countMine--
-            }
-        }
-    }
-
-
+function addMinesRandom(minesAmount) {
+	console.log(emptyCells());
+	var arrEmptyCells = emptyCells();
+	for (var i = 0; i < minesAmount; i++) {
+		var Idx = getRandomIntInclusive(0, arrEmptyCells.length - 1);
+		var location = arrEmptyCells[Idx];
+		//update model -
+		gBoard[location.i][location.j].isMine = true;
+		// 	//update DOM -
+		// var elCell = document.getElementById('cell ' + location.i + ',' + location.j);
+		// console.log('ELCELL', elCell);
+		arrEmptyCells.splice(Idx, 1);
+	}
+	console.log('GBOARD', gBoard);
 }
-
-

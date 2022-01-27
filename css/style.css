@@ -1,0 +1,59 @@
+ body {
+    text-align: center;
+    background-image: url(../img/img1.jpg);
+}
+
+.board td {
+    background-color:rgb(133, 172, 175);
+    width: 50px; 
+    height:50px;
+    border: 3px solid rgb(245, 241, 241);
+}
+.board td:hover {
+    background-color: #cadbd3; 
+}
+.occupied {
+	background-color: #362b2d;
+}
+
+#display {
+	width: 100%;
+	font-size: 30px;
+}
+.container {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #94d2bd;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+table {
+    margin: auto;
+    padding: 15px;
+    cursor: pointer;
+}
+ .buttons {
+     font-size: small;
+}
+
+.btn1{
+    background-color: rgb(168, 163, 157);
+    margin-right: 15px;
+}
+
+.btn2{
+    background-color: lightblue;
+    margin-right: 15px;
+}
+
+.btn3{
+    background-color: lightcoral;
+}
+
+.footer {
+    background-color:rgb(219, 231, 231);
+    display: inline-block;
+} 
+
