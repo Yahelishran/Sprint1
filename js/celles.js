@@ -22,22 +22,20 @@ function cellClicked(elCell, i, j) {
 	} else {
 		elCell.innerHTML = cell.minesAroundCount;
 	}
+	var countMoves = document.querySelector('.counter')
+	countMoves.innerHTML = 'moves : ' + gGame.shownCount
 	gGame.shownCount++;
-	console.log('Cell clicked: ', elCell, i, j);
-	console.log('gGameShownCount', gGame.shownCount);
 }
 
-function emptyCells() {
-	var emptyArr = [];
-	for (var i = 0; i < gBoard.length; i++) {
-		for (var j = 0; j < gBoard[0].length; j++) {
-			var currCell = gBoard[i][j];
-			if (!currCell.isMine) {
-				emptyArr.push({ i, j });
+	function emptyCells() {
+		var emptyArr = [];
+		for (var i = 0; i < gBoard.length; i++) {
+			for (var j = 0; j < gBoard[0].length; j++) {
+				var currCell = gBoard[i][j];
+				if (!currCell.isMine) {
+					emptyArr.push({ i, j });
+				}
 			}
 		}
+		return emptyArr;
 	}
-	return emptyArr;
-}
-
-function cellMarked(elCell) {}

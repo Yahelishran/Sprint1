@@ -83,9 +83,16 @@ function renderBoard() {
     elBoard.innerHTML = strHTML;
 }
 
-checkGameOver();
 function checkGameOver() {
-    console.log('BOARDSIZE', gLevel.SIZE);
-    if (gGame.shownCount === gLevel.SIZE ** 2 - gLevel.MINES) gGame.isOn = false;
-    console.log('SHOWNCOUNT', gGame.shownCount);
+    for (var i = 0; i < gBoard.length; i++) {
+        for (var j = 0; j < gBoard[0].length; j++) {
+            if (gBoard[i][j].isMine) {
+                if (!gBoard[i][j].isMarked && !gBoard[i][j].isShown) return false;
+
+            }
+            else
+                if (!gBoard[i][j].isShown) return false;
+        }
+    }
+    return true;
 }

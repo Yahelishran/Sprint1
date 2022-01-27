@@ -1,19 +1,40 @@
  body {
     text-align: center;
     background-image: url(../img/img1.jpg);
+    border-collapse: collapse;
+    
+}
+h1 {
+ font-family: Impact, fantasy;
+  font-weight: 2000;
+  font-size: 3.5rem;
+  margin-bottom: 0px;
+  color: #223241;
+  margin-top: 2%;
+  text-shadow: 0px 3px 0px #3d768a;
+}
+h3{
+   text-align: left; 
+}
+.stopwatch{
+    font-family: Impact, fantasy;
+    font-size: 20px;
+    color: #0b263f;
+    size: 15px;
+    
 }
 
 .board td {
     background-color:rgb(133, 172, 175);
+    margin: auto;
     width: 50px; 
     height:50px;
-    border: 3px solid rgb(245, 241, 241);
+    border: 3px solid #11353b;
+    
 }
 .board td:hover {
-    background-color: #cadbd3; 
-}
-.occupied {
-	background-color: #362b2d;
+     background-color: #cadbd3;  
+     /* background-color: transparent;  do or not ? */
 }
 
 #display {
@@ -24,36 +45,71 @@
 	width: 50%;
 	margin: 0 auto;
 	text-align: center;
-	background-color: #94d2bd;
+	/* background-color: #94d2bd; */
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
 table {
+    
     margin: auto;
     padding: 15px;
     cursor: pointer;
 }
  .buttons {
-     font-size: small;
+     margin-top: 25px;     
 }
 
 .btn1{
-    background-color: rgb(168, 163, 157);
-    margin-right: 15px;
+    box-shadow: 0px 10px 14px -7px #a5c3c9;
+    background-color: transparent;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #223241;
+    font-size: 12px;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1c1e1f;
+    
+
 }
 
 .btn2{
-    background-color: lightblue;
-    margin-right: 15px;
+    box-shadow: 0px 10px 14px -7px #a5c3c9;
+    background-color: rgb(223, 235, 235);
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #223241;
+    font-size: 12px;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1c1e1f;
 }
 
 .btn3{
-    background-color: lightcoral;
+    box-shadow: 0px 10px 14px -7px #e2edf0;
+    background-color:rgb(36, 197, 197);
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #223241;
+    font-size: 12px;
+    padding: 10px 30px;
+    text-shadow: 0px 1px 0px #1c1e1f;
+    
 }
 
 .footer {
-    background-color:rgb(219, 231, 231);
+    background-color:rgb(199, 233, 233);
     display: inline-block;
+    color: #223241;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    
 } 
+.counter {
+ font-size: 20px; 
+}
 
