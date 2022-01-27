@@ -5,20 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
     <title>Mine Sweeper</title>
+    <link rel="stylesheet" href="css/app.css">
 
 </head>
 
+
 <body onload="initGame()">
-    <h1>Sprint1</h1>
-    <h2>Mine Sweeper</h2>
-    <button class="easy" onclick="buildBoard(4)">easy</button>
-    <button class="medium" onclick="buildBoard(8)">medium</button>
-    <button class="hard" onclick="buildBoard(12)">hard</button>
-    <div class="board"></div>
+    <h1> Mine Sweeper</h1>
+    <div class="level">
+        <h2>choose level:</h2>
+        <button onclick="userChoseLevel('Hard')">Hard</button>
+        <button onclick="userChoseLevel('Medium')">Medium</button>
+        <button onclick="userChoseLevel('Easy')">Easy</button>
+    </div>
+
+
+    <div class="board-container"></div>
+    <script src="js/mines.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/cell.js"></script>
+    <script src="js/features.js"></script>
     <script src="js/game.js"></script>
+    <br /> <br /> <br />
+    <div class="footer">Yaheli Ishran &copy;</div>
 </body>
 
 </html>

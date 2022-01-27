@@ -1,44 +1,38 @@
 'use strict'
 
+function buildBoard() {
+    var board = []
+    var SIZE = gLevel.SIZE
+    for (var i = 0; i < SIZE; i++) {
+        board.push([])
+        for (var j = 0; j < SIZE; j++) {
+            var cell = { minesAroundCount: 0, isShown: false, isMine: false, isMarked: false }
+            board[i][j] = cell
+        }
+    }
+    return board
+}
 
-function renderBoard(board) {
-    
-    var strHTML = `<table>`;
+function renderBoard(board, selector) {
+
+    var strHTML = '<table border="0"><tbody>';
     for (var i = 0; i < board.length; i++) {
-        strHTML += `<tr>`;
+        strHTML += '<tr>';
         for (var j = 0; j < board[0].length; j++) {
-
-            var cell = board[i][j]
-            strHTML += `<td>${cell}</td>`
+            var cell = ' ';
+            var className = `cell cell${i}-${j}`;
+            strHTML += `<td onmousedown="cellClicked(${i},${j},event,this)" class=" ${className}"> ${cell} </td>`;
         }
-        strHTML += `</tr>`
+        strHTML += '</tr>'
     }
-    strHTML += `</table>`;
-    var elTable = document.querySelector('.board')
-    elTable.innerHTML = strHTML
-
+    strHTML += '</tbody></table>';
+    var elContainer = document.querySelector(selector);
+    elContainer.innerHTML = strHTML;
 }
 
 
-
-
-function createMat(ROWS, COLS) {
-    var mat = []
-    for (var i = 0; i < ROWS; i++) {
-        var row = []
-        for (var j = 0; j < COLS; j++) {
-            row.push('')
-        }
-        mat.push(row)
-    }
-    return mat
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
-function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-// Select the elCell and set the value
-function renderCell(location, value) {
-    var elCell = document.querySelector(`.cell-${location.i}-${location.j}`);
-    elCell.innerHTML = value;
-}
+
